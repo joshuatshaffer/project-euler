@@ -12,8 +12,8 @@ bool is_prime (long n) {
         if ((n % 2 == 0) || (n % 3 == 0)) {
             return false;
         }
-        for (long div=5; div*div <= n; div+=6) {
-            if ((n % div == 0) || (n % (div+2) == 0)) {
+        for (long div = 5; div * div <= n; div += 6) {
+            if ((n % div == 0) || (n % (div + 2) == 0)) {
                 return false;
             }
         }
@@ -23,15 +23,15 @@ bool is_prime (long n) {
     }
 }
 
-int main(int argc, const char * argv[]) {
+int main (int argc, const char *argv[]) {
     long long sum = 2;
-    for (long i=3; i<2000000; i+=2) {
-        if (is_prime(i)) {
+    for (long i = 3; i < 2000000; i += 2) {
+        if (is_prime (i)) {
             cout << i << endl;
             sum += i;
         }
     }
-    cout << sum << endl;//143042032112
-    cout << LONG_LONG_MAX << endl;//143042032112
+    cout << sum << endl;           // 143042032112
+    cout << LONG_LONG_MAX << endl; // 143042032112
     return 0;
 }

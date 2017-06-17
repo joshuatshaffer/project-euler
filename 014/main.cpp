@@ -6,16 +6,16 @@
 
 using namespace std;
 
-int main(int argc, const char * argv[]) {
+int main (int argc, const char *argv[]) {
     long n = 50, ms;
     int c, ml = 0;
-    for (long i=999999; i>5; --i) {
+    for (long i = 999999; i > 5; --i) {
         n = i;
         c = 0;
         while (n != 1) {
             ++c;
             if (n & 1) {
-                n = 3*n + 1;
+                n = 3 * n + 1;
             } else {
                 n >>= 1;
             }

@@ -2,7 +2,7 @@
 
 using namespace std;
 
-bool is_prime(long n) {
+bool is_prime (long n) {
     if (n <= 3) {
         return n > 1;
     } else if (n % 2 == 0 || n % 3 == 0) {
@@ -20,7 +20,7 @@ bool is_prime(long n) {
 int next_prime (int n) {
     if (++n % 2 == 0)
         ++n;
-    while (!is_prime(n))
+    while (!is_prime (n))
         n += 2;
     return n;
 }
@@ -28,12 +28,13 @@ int next_prime (int n) {
 bool goldbach (int n) {
     if (n % 2 == 0)
         return true;
-    if (is_prime(n))
+    if (is_prime (n))
         return true;
-    for (int i=2; i<n; i=next_prime(i)) {
+    for (int i = 2; i < n; i = next_prime (i)) {
         int j = 1;
-        while (j*j*2 + i < n) ++j;
-        if (j*j*2 + i == n)
+        while (j * j * 2 + i < n)
+            ++j;
+        if (j * j * 2 + i == n)
             return true;
     }
     return false;
@@ -41,6 +42,7 @@ bool goldbach (int n) {
 
 int main () {
     int n = 9;
-    while (goldbach(n)) n+=2;
+    while (goldbach (n))
+        n += 2;
     cout << n << endl;
 }
